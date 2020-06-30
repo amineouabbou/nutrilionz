@@ -1,0 +1,143 @@
+@import "../css/variables.scss";
+
+.header {
+  background-color: $dark-color;
+  border: 0;
+  position: relative;
+  z-index: 9;
+  color: #fff;
+
+  .socialShare {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+      margin: 0 6px;
+      a {
+        font-size: 20px;
+        color: #c7c7c7;
+        transition: ease-in 0.15s;
+
+        &:hover {
+          color: $second-color;
+        }
+      }
+    }
+  }
+}
+
+.top-links-container {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .support-header {
+    text-align: left;
+    font-size: 13px;
+    line-height: normal;
+
+    a {
+      color: $second-color;
+      direction: ltr;
+      display: inline-block;
+      font-family: "FuturaBT-Book";
+    }
+  }
+}
+
+.header-middle {
+  text-align: center;
+  padding: 10px 0 30px;
+  position: relative;
+  .logo-box {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.menu-icon {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  display: inline-block;
+  vertical-align: middle;
+  height: 27px;
+  width: 28px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  margin: auto 0;
+
+  div {
+    display: block;
+    height: 27px;
+    width: 28px;
+  }
+
+  i {
+    background-color: #b0b0b0;
+    height: 3px;
+    width: 16px;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+    border-radius: 2px;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      margin: auto 0;
+      border-radius: 2px;
+    }
+
+    &:before {
+      background-color: #b0b0b0;
+      height: 3px;
+      width: 20px;
+      top: -7px;
+    }
+
+    &:after {
+      background-color: #b0b0b0;
+      height: 3px;
+      width: 13px;
+      bottom: -7px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .header-middle {
+    padding: 10px 15px;
+    .logo-box {
+      .logo-mobile {
+        img {
+          width: 37px;
+        }
+      }
+    }
+  }
+
+  .menu-sub-logo {
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 0 29px rgba(0, 0, 0, 0.09);
+
+    .logo-box {
+      text-align: center;
+
+      img {
+        width: 139px;
+      }
+    }
+  }
+}

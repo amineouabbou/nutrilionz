@@ -5,6 +5,38 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: "مدونة نترلاينز لكمال الأجسام المغرب",
+    description:
+      "مدونة نترلاينز، موقع مغربي عربي مخصص لرياضة كمال الأجسام، يهتم بكل ما يخص التغذية و التمارين وغيرها من المواضيع المفيدة",
+    url: "https://www.nutrilionz.com", // No trailing slash allowed!
+    image: "/images/snap.jpg", // Path to your image you placed in the 'static' folder
+  },
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Cairo`,
+            variants: [`700`],
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        // This type will contain remote schema Query type
+        typeName: `WPGraphQL`,
+        // This is field under which it's accessible
+        fieldName: `wpgraphql`,
+        // Url to query from
+        url: `https://www.nutrilionz.ma/wp-local/graphql`,
+      },
+    },
+  ],
 }

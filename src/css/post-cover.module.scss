@@ -1,0 +1,153 @@
+@import "../css/variables.scss";
+
+.post-cover {
+  position: relative;
+  margin-bottom: 30px;
+
+  .thumb {
+    margin: 0 -15px;
+  }
+
+  .overlay {
+    .metas {
+      margin: 10px 0;
+      > div {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .category {
+        background-color: $second-color;
+        border-radius: 30px;
+        font-family: "FrutigerLTBlack";
+        color: #2d2d2d;
+        height: 21px;
+        line-height: 19px;
+        padding: 0 8px;
+        font-size: 10px;
+        margin-left: 7px;
+      }
+
+      .date {
+        font-size: 11px;
+        line-height: normal;
+        i {
+          vertical-align: inherit;
+          margin-left: 5px;
+          line-height: 21px;
+        }
+      }
+    }
+
+    h3 {
+      margin: 0 0 10px 0;
+      font-family: "FrutigerLTBold";
+      font-size: 24px;
+      line-height: 27px;
+      a {
+        color: $dark-color;
+      }
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    .read-more {
+      img {
+        width: 16px;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .post-cover {
+    position: relative;
+
+    .thumb {
+      margin: 0;
+    }
+
+    &:before {
+      background: linear-gradient(
+        0deg,
+        rgba(45, 45, 45, 1) 0%,
+        rgba(45, 45, 45, 0) 100%
+      );
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      display: block;
+      content: "";
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 30px 30px;
+
+      .metas {
+        margin-bottom: 5px;
+        div {
+          display: inline-block;
+          vertical-align: top;
+          color: $second-color;
+        }
+
+        .category {
+          background-color: transparent;
+          color: $second-color;
+          font-family: "FrutigerLTBold";
+          font-size: 18px;
+          line-height: inherit;
+          margin-left: 8px;
+          line-height: 24px;
+          padding: 0;
+          height: auto;
+        }
+
+        .date {
+          font-size: 14px;
+          line-height: 27px;
+          padding-right: 8px;
+          position: relative;
+
+          &:before {
+            content: "";
+            background-color: rgba(255, 255, 255, 0.4);
+            display: block;
+            height: 12px;
+            width: 1px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto 0;
+          }
+        }
+      }
+
+      h3 {
+        letter-spacing: inherit;
+        width: 70%;
+        font-size: 30px;
+        line-height: 36px;
+        a {
+          color: #fff;
+        }
+      }
+
+      p {
+        color: #fff;
+        width: 70%;
+      }
+    }
+  }
+}

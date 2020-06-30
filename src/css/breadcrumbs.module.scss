@@ -1,0 +1,68 @@
+.breadcrumbs {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+
+  .list {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 5px;
+
+    ul {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        vertical-align: middle;
+
+        &:first-child {
+          a {
+            img {
+              width: 15px;
+            }
+          }
+        }
+
+        &.split {
+          margin: 0 8px;
+          span {
+            font-size: 14px;
+          }
+        }
+
+        strong {
+          font-family: "FrutigerLTBold";
+        }
+      }
+    }
+  }
+
+  .sub-title {
+    text-align: center;
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      line-height: inherit;
+      font-family: "FrutigerLTBold";
+      font-weight: normal;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .breadcrumbs {
+    border: 0;
+    padding: 50px 0;
+    margin: 0;
+
+    .sub-title {
+      h1 {
+        font-size: 32px;
+      }
+    }
+  }
+}

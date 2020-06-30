@@ -1,0 +1,84 @@
+@import "../css/variables.scss";
+
+.article-item-list {
+  margin: 15px 0;
+
+  .metas {
+    margin-bottom: 10px;
+    > div {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .date {
+      font-size: 12px;
+      line-height: 27px;
+      position: relative;
+    }
+
+    .category {
+      background-color: $second-color;
+      border-radius: 30px;
+      font-family: "FrutigerLTBlack";
+      color: $dark-color;
+      height: 27px;
+      line-height: 24px;
+      padding: 0 15px;
+      font-size: 13px;
+      margin-left: 10px;
+    }
+  }
+
+  .date {
+    &.mobile {
+      font-size: 11px;
+      letter-spacing: 0;
+      margin-top: 10px;
+    }
+  }
+
+  h3 {
+    margin: 0 0 10px 0;
+    font-family: "FrutigerLTBold";
+    margin: 0;
+    font-size: 18.5px;
+
+    a {
+      color: $dark-color;
+    }
+  }
+
+  p {
+    font-size: 14.5px;
+    max-height: 63px;
+    overflow: hidden;
+  }
+
+  .read-more {
+    img {
+      width: 16px;
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .article-item-list {
+    margin: 30px 0;
+    h3 {
+      font-size: 21px;
+      line-height: 26px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .article-item-list {
+    img {
+      height: 90px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

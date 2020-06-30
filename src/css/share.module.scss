@@ -1,0 +1,76 @@
+.box-share-bottom {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 13px 20px;
+  box-shadow: 0 0 34px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transform: translateY(100%);
+  transition: ease 0.35s;
+
+  button {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    outline: none;
+    display: block;
+    transform: translateY(40px);
+    transition: ease-in 0.3s;
+    width: 100%;
+
+    > span {
+      background-color: #496399;
+      height: 50px;
+      display: block;
+      line-height: 45px;
+      min-width: 190px;
+      border-radius: 50px;
+      padding: 0 30px;
+      transition: 0.15s ease-in;
+      text-align: center;
+
+      span {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      i {
+        font-size: 18px;
+        color: #fff;
+        padding-left: 12px;
+        margin-left: 15px;
+        position: relative;
+
+        &:after {
+          background-color: rgba(255, 255, 255, 0.2);
+          content: "";
+          display: block;
+          position: absolute;
+          height: 20px;
+          width: 1px;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto 0;
+        }
+      }
+
+      strong {
+        font-size: 17px;
+        font-family: "FrutigerLTBold";
+        color: #fff;
+      }
+    }
+  }
+
+  &.active {
+    transform: translateY(0);
+    button {
+      transform: translateY(0);
+    }
+  }
+}

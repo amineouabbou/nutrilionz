@@ -1,0 +1,69 @@
+@import "../css/fonts.scss";
+@import "../css/variables.scss";
+
+body {
+  font-family: "FrutigerLTLight";
+  font-size: 14px;
+  color: $dark-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $dark-color;
+  letter-spacing: 0.04em;
+  text-align: right;
+  direction: rtl;
+  counter-reset: my-sec-counter;
+}
+
+a {
+  transition: 0.15s ease-in;
+}
+
+a:hover {
+  text-decoration: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+.row-10 {
+  margin: 0 -10px;
+  > div {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .row-xs-6 {
+    margin: 0 -6px;
+    > div {
+      padding: 0 6px;
+    }
+  }
+}
+
+.notification {
+  background-color: $second-color;
+  position: fixed;
+  color: $dark-color;
+  padding: 15px 0;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  font-family: "FrutigerLTBold";
+  letter-spacing: 0.09em;
+  box-shadow: 0 0 29px rgba(0, 0, 0, 0.09);
+  p {
+    margin: 0;
+    text-align: center;
+  }
+}

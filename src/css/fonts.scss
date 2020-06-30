@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "FrutigerLTLight";
+  src: url("../assets/fonts/frutiger/FrutigerLTArabic-45Light.woff")
+      format("woff"),
+    url("../assets/fonts/frutiger/FrutigerLTArabic-45Light.ttf")
+      format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "FrutigerLTBold";
+  src: local("FrutigerLTBold"),
+    url("../assets/fonts/frutiger/FrutigerLTArabic-65Bold.woff") format("woff"),
+    url("../assets/fonts/frutiger/FrutigerLTArabic-65Bold.ttf")
+      format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "FrutigerLTBlack";
+  src: local("FrutigerLTBlack"),
+    url("../assets/fonts/frutiger/FrutigerLTArabic-75Black.woff") format("woff"),
+    url("../assets/fonts/frutiger/FrutigerLTArabic-75Black.ttf")
+      format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FuturaBT-Book";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Read next point */
+  unicode-range: U+000-5FF; /* Download only latin glyphs */
+  src: local("FuturaBT-Book"),
+    url("../assets/fonts/futura/FuturaBT-Book.woff2") format("woff2"),
+    url("../assets/fonts/futura/FuturaBT-Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FuturaBT-Heavy";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Read next point */
+  unicode-range: U+000-5FF; /* Download only latin glyphs */
+  src: local("FuturaBT-Heavy"),
+    url("../assets/fonts/futura/FuturaBT-Heavy.woff2") format("woff2"),
+    url("../assets/fonts/futura/FuturaBT-Heavy.woff") format("woff");
+}

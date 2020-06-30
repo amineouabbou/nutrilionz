@@ -1,0 +1,15 @@
+@media (max-width: 767px) {
+  .list-post {
+    .post-cover {
+      margin-bottom: 25px;
+      .thumb {
+        margin: 0 -15px;
+        img {
+          height: 202px;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

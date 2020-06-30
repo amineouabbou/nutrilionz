@@ -1,0 +1,223 @@
+@import "../css/variables.scss";
+
+.recipe-detail {
+  .img-holder {
+    margin: 0 -15px;
+    img {
+      height: 230px;
+      object-fit: cover;
+    }
+  }
+
+  .nutrition-facts {
+    background-color: #fff;
+    box-shadow: 0 9px 24px rgba(0, 0, 0, 0.13);
+    border-radius: 6px;
+    position: relative;
+    z-index: 2;
+    min-height: 93px;
+    margin-top: -15px;
+    margin-bottom: 35px;
+
+    .left {
+      padding: 10px 0;
+      min-height: 83px;
+    }
+
+    .item {
+      background-image: url("../assets/images/icons/dash.png");
+      background-position: center left;
+      background-repeat: no-repeat;
+      width: 25%;
+      padding: 0 10px;
+
+      div {
+        font-size: 13px;
+
+        span {
+          font-family: "Cairo", sans-serif;
+          font-weight: 700;
+          line-height: 36px;
+          font-size: 27px;
+          letter-spacing: -0.04em;
+        }
+      }
+
+      p {
+        margin: 0;
+        font-size: 11px;
+      }
+
+      &:last-child {
+        background-image: none;
+      }
+    }
+
+    .servings {
+      background-color: $second-color;
+      padding: 0 38px;
+      border-radius: 0 0 6px 6px;
+      min-height: 58px;
+      .plat {
+        i {
+          margin-left: 12px;
+          img {
+            width: 30px;
+          }
+        }
+
+        div {
+          line-height: normal;
+          font-size: 15px;
+          span {
+            font-family: "FuturaBT-Heavy";
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .std {
+    ul,
+    ol {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .preparation {
+      .directions {
+        margin-bottom: 10px;
+        .timing {
+          margin-bottom: 18px;
+          ul {
+            font-size: 15px;
+            li {
+              display: inline-block;
+              vertical-align: top;
+              margin-left: 10px;
+              margin-bottom: 0;
+              padding: 0;
+
+              &:before {
+                display: none;
+              }
+
+              strong {
+                font-family: "FrutigerLTBold";
+              }
+            }
+          }
+        }
+      }
+
+      .hide {
+        display: none;
+      }
+    }
+  }
+
+  .tabs {
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 30px;
+    button {
+      background-color: transparent;
+      border: 0;
+      outline: none;
+      display: inline-block;
+      padding: 15px 0 20px 0;
+      font-family: "FrutigerLTBold";
+      color: #c9c9c9;
+      font-size: 18px;
+      position: relative;
+      margin-left: 30px;
+
+      &:after {
+        background-color: $second-color;
+        content: "";
+        display: block;
+        height: 4px;
+        position: absolute;
+        bottom: -1px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        width: 0;
+        transition: 0.13s ease-in;
+      }
+
+      &.active {
+        color: $dark-color;
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .panel-box {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .recipe-detail {
+    .img-holder {
+      margin: 0;
+      img {
+        height: inherit;
+      }
+    }
+
+    .nutrition-facts {
+      margin: -50px 5px 35px;
+
+      .left {
+        min-height: inherit;
+      }
+
+      .item {
+        padding: 0 35px;
+        width: inherit;
+        div {
+          font-size: 18px;
+          span {
+            font-size: 35px;
+          }
+        }
+
+        p {
+          font-size: 13px;
+        }
+      }
+
+      .servings {
+        min-width: 230px;
+        border-radius: 6px 0 0 6px;
+        min-height: inherit;
+        .plat {
+          i {
+            img {
+              width: 44px;
+            }
+          }
+
+          div {
+            font-size: 18px;
+            span {
+              font-size: 23px;
+            }
+          }
+        }
+      }
+    }
+
+    .panel-box {
+      display: block !important;
+    }
+  }
+}

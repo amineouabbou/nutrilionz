@@ -1,0 +1,13 @@
+.home-grid {
+  .placeholder {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-grid {
+    .placeholder {
+      margin-bottom: 30px;
+    }
+  }
+}

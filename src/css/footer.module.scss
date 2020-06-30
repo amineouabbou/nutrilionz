@@ -1,0 +1,188 @@
+@import "../css/variables.scss";
+
+.footer {
+  margin-top: 100px;
+  color: #cacaca;
+
+  .footer-top,
+  .footer-middle {
+    background-color: $dark-color;
+  }
+
+  .footer-top {
+    padding: 40px 0;
+    .middle-box {
+      text-align: center;
+    }
+
+    .middle-box {
+      .logo-box {
+        img {
+          opacity: 0.8;
+        }
+      }
+
+      .short-desc {
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        line-height: 16px;
+        color: #cacaca;
+        margin: 22px 0 35px;
+      }
+
+      .social-share {
+        margin-bottom: 30px;
+        ul {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          li {
+            display: inline-block;
+            margin: 0 10px;
+            a {
+              font-size: 26px;
+              color: #424242;
+
+              &:hover {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .newsletter-footer {
+      h3 {
+        font-size: 13.9px;
+        letter-spacing: 0.04em;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: "FrutigerLTBold";
+        font-weight: 400;
+        margin: 0 0 15px 0;
+        display: block;
+      }
+
+      .input-box {
+        form {
+          position: relative;
+          display: block;
+        }
+        .input-text {
+          border-radius: 60px;
+          background-color: #383838;
+          letter-spacing: 0.06em;
+          padding: 0 28px;
+          margin: 0;
+          position: relative;
+          width: 100%;
+          border: 0;
+          color: #727272;
+          height: 50px;
+          font-size: 13.5px;
+          text-align: left;
+          outline: none;
+          direction: ltr;
+        }
+
+        .button {
+          background-color: transparent;
+          border: 0;
+          outline: none;
+          padding: 0;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 5px;
+          cursor: pointer;
+
+          > span {
+            background-color: $second-color;
+            height: 40px;
+            line-height: 35px;
+            width: 46px;
+            display: block;
+            border-radius: 30px;
+            border: 0;
+            text-align: center;
+            font-size: 13px;
+            font-family: "FrutigerLTBold";
+          }
+        }
+
+        .error-box {
+          padding: 5px 0;
+          color: #ff0000;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .footer-middle {
+    padding: 0 0 55px;
+    .footer-links {
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      padding-top: 40px;
+
+      .ul-box {
+        padding: 0 10px;
+        h4 {
+          margin-bottom: 15px;
+          font-size: 16.9px;
+          line-height: normal;
+          display: block;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          font-family: "FrutigerLTBold";
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            line-height: 20px;
+            padding: 5px 0;
+            a {
+              color: #d0d0d0;
+              font-size: 13px;
+              letter-spacing: 0.04em;
+
+              &:hover {
+                color: $second-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.copyrights-bottom {
+  background-color: #fff;
+  padding: 22px 0 40px;
+  text-align: center;
+  p {
+    margin: 0;
+    font-size: 12.9px;
+    color: #898989;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    .footer-top {
+      padding: 40px 0;
+      .middle-box {
+        .short-desc {
+          padding: 0 55px;
+        }
+      }
+    }
+  }
+}
