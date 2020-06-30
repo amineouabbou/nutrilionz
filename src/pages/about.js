@@ -6,7 +6,7 @@ export default class About extends React.Component {
     return (
       <Layout>
         <main>
-          <p>About content 2</p>
+          <p>About content 99</p>
         </main>
       </Layout>
     )
