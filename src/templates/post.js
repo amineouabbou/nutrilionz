@@ -70,28 +70,10 @@ const Post = ({ data }) => {
               <div className="img-thumb">
                 <img src={sourceUrl} alt={imgTitle} />
               </div>
-              <div className="tags">
-                <strong>تغذية</strong>
-                <strong>تمارين</strong>
-                <strong>بروتينات</strong>
-                <strong>معلومات</strong>
-              </div>
               <div
                 className="std"
                 dangerouslySetInnerHTML={{ __html: content }}
               />
-
-              <div className="std">
-                <ol>
-                  <li>سخني الزيت النباتي بقدر على النار</li>
-                  <li>بهرّي الدجاج بالملح، والفلفل الأسود.</li>
-                  <li>صبّي كريمة الطبخ، وقلبي</li>
-                  <li>قدميها ساخنة.</li>
-                  <li>بهرّي الدجاج بالملح، والفلفل الأسود.</li>
-                  <li>صبّي كريمة الطبخ، وقلبي</li>
-                  <li>قدميها ساخنة.</li>
-                </ol>
-              </div>
 
               {products ? <Products products={products} /> : null}
 

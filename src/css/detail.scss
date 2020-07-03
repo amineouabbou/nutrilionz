@@ -86,7 +86,8 @@
     line-height: 28px;
 
     h2,
-    h3 {
+    h3,
+    h4 {
       font-family: "FrutigerLTBold";
       line-height: inherit;
       padding: 25px 0;
@@ -94,9 +95,10 @@
     }
 
     h2 {
-      font-size: 18px;
+      font-size: 25px;
       margin-bottom: 15px;
       position: relative;
+      letter-spacing: 0.05em;
 
       &:before {
         background-color: $dark-color;
@@ -111,6 +113,10 @@
     }
 
     h3 {
+      font-size: 16px;
+    }
+
+    h4 {
       font-size: 16px;
     }
 
@@ -145,6 +151,7 @@
     }
 
     ol {
+      counter-reset: my-sec-counter;
       li {
         &:after {
           counter-increment: my-sec-counter;
@@ -161,10 +168,24 @@
 
     .wp-block-image {
       margin: 30px -15px;
+
+      figcaption {
+        font-size: 12px;
+        text-align: center;
+        color: #666;
+        text-align: center;
+        padding: 5px 10px 0;
+      }
     }
 
     p {
       margin-bottom: 25px;
+
+      &:first-child {
+        font-size: 19px;
+        text-align: justify;
+      }
+
       a {
         display: inline-block;
         vertical-align: top;
