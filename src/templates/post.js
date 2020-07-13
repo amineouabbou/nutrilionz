@@ -35,6 +35,17 @@ const Post = ({ data }) => {
     title: metaTitle || title,
   }
 
+  /*const addIds = () => {
+    const h2 = document.querySelectorAll(".std h2")
+    h2.forEach((item, index) => {
+      item.setAttribute("id", `paragraph-${index}`)
+    })
+  }
+
+  useEffect(() => {
+    addIds()
+  })*/
+
   return (
     <>
       <Layout>
@@ -70,8 +81,31 @@ const Post = ({ data }) => {
               <div className="img-thumb">
                 <img src={sourceUrl} alt={imgTitle} />
               </div>
+
+              {/* <nav className="article-nav">
+                <ul>
+                  <li>
+                    <a href="#paragraph-0">ما هو الواي بروتين ؟</a>
+                  </li>
+                  <li>
+                    <a href="#paragraph-1">كيف يصنع الواي؟</a>
+                  </li>
+                  <li>
+                    <a href="http://www.google.com">فوائد الواي بروتين</a>
+                  </li>
+                  <li>
+                    <a href="http://www.google.com">أضرار الواي بروتين</a>
+                  </li>
+                  <li>
+                    <a href="http://www.google.com">طريقة الإستخدام</a>
+                  </li>
+                  <li>
+                    <a href="http://www.google.com">الأسئلة الشائعة</a>
+                  </li>
+                </ul>
+              </nav> */}
               <div
-                className="std"
+                className="std std-blog"
                 dangerouslySetInnerHTML={{ __html: content }}
               />
 

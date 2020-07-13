@@ -85,7 +85,7 @@
     max-width: 285px;
     min-width: 285px;
     transform: translateX(-100%);
-    transition: ease 0.3s;
+    transition: all 0.7s cubic-bezier(0.8, 0, 0, 1);
 
     &.active {
       transform: translateX(0);
@@ -227,7 +227,7 @@
     z-index: 998;
     opacity: 0;
     visibility: hidden;
-    transition: ease-out 0.3s;
+    transition: all 0.75s cubic-bezier(0.7, 0, 0, 1);
 
     &.active {
       opacity: 0.75;

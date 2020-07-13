@@ -81,6 +81,43 @@
     }
   }
 
+  .article-nav {
+    margin: 0 -12px 25px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: right;
+
+      li {
+        padding: 0 12px;
+        white-space: nowrap;
+        position: relative;
+        line-height: 30px;
+
+        &:after {
+          background-color: #bcbfc5;
+          content: "";
+          display: block;
+          height: 13px;
+          width: 1px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto 0;
+        }
+
+        a {
+          color: $dark-color;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
   .std {
     font-size: 16px;
     line-height: 28px;
@@ -170,21 +207,28 @@
       margin: 30px -15px;
 
       figcaption {
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
         color: #666;
         text-align: center;
-        padding: 5px 10px 0;
+        padding: 2px 10px;
+        border-bottom: 1px solid $border-gray;
+      }
+    }
+
+    &.std-blog {
+      p {
+        &:first-child {
+          font-size: 20px;
+          line-height: 27px;
+          text-align: justify;
+          color: #000;
+        }
       }
     }
 
     p {
       margin-bottom: 25px;
-
-      &:first-child {
-        font-size: 19px;
-        text-align: justify;
-      }
 
       a {
         display: inline-block;

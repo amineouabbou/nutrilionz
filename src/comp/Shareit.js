@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import Styles from "../css/share.module.scss"
-import { FaFacebookF } from "react-icons/fa"
+import { FaShareAlt } from "react-icons/fa"
 
 export default class Shareit extends Component {
   state = {
@@ -40,7 +40,7 @@ export default class Shareit extends Component {
           <span>
             <span>
               <i>
-                <FaFacebookF />
+                <FaShareAlt />
               </i>
               <strong>شارك المقال</strong>
             </span>

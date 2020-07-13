@@ -61,7 +61,7 @@ export default class Header extends React.Component {
             </div>
           </div>
 
-          <div className={Styles.headerMiddle}>
+          <div id="middle-header" className={Styles.headerMiddle}>
             <div className="container">
               <div className={Styles.logoBox}>
                 <div className="logo d-none d-lg-inline-block">

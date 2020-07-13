@@ -1,3 +1,5 @@
+@import "../css/variables.scss";
+
 .box-share-bottom {
   background-color: #fff;
   position: fixed;
@@ -9,7 +11,7 @@
   box-shadow: 0 0 34px rgba(0, 0, 0, 0.2);
   z-index: 999;
   transform: translateY(100%);
-  transition: ease 0.35s;
+  transition: all 0.7s cubic-bezier(0.8, 0, 0, 1);
 
   button {
     border: 0;
@@ -19,11 +21,11 @@
     outline: none;
     display: block;
     transform: translateY(40px);
-    transition: ease-in 0.3s;
+    transition: all 0.7s cubic-bezier(0.8, 0, 0, 1);
     width: 100%;
 
     > span {
-      background-color: #496399;
+      background-color: $second-color;
       height: 50px;
       display: block;
       line-height: 45px;
@@ -40,7 +42,7 @@
 
       i {
         font-size: 18px;
-        color: #fff;
+        color: $dark-color;
         padding-left: 12px;
         margin-left: 15px;
         position: relative;
@@ -62,7 +64,7 @@
       strong {
         font-size: 17px;
         font-family: "FrutigerLTBold";
-        color: #fff;
+        color: $dark-color;
       }
     }
   }
