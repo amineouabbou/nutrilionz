@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../comp/Layout"
 import Twocolumns from "../comp/layout/Twocolumns"
 import Shareit from "../comp/Shareit"
@@ -8,7 +8,7 @@ import Breadcrumbs from "../comp/Breadcrumbs"
 import plat from "../assets/images/icons/plat.svg"
 import { graphql } from "gatsby"
 import Seo from "../comp/Seo"
-import { nativeShareIt } from "../functions/func"
+import { nativeShareIt, isMobileDevice } from "../functions/func"
 import { useLocation } from "@reach/router"
 import moment from "moment"
 import "moment/locale/ar-ma"
@@ -16,6 +16,7 @@ moment.locale("ar-ma")
 
 const Recipe = props => {
   const [index, setIndex] = useState(0)
+  const [isMobile, setisMobile] = useState(null)
   const { pathname } = useLocation()
 
   const {
@@ -45,25 +46,28 @@ const Recipe = props => {
     title: metaTitle || title,
   }
 
-  const {
-    defaultTitle,
-    defaultDescription,
-    url,
-    defaultImage,
-  } = props.data.site.siteMetadata
+  const { url } = props.data.site.siteMetadata
+
+  useEffect(() => {
+    isMobileFun()
+  }, [])
+
+  const shareFb = e => {
+    e.preventDefault()
+    nativeShareIt(seo.title, metaDescription, `${url}${pathname}`)
+  }
+
+  const isMobileFun = () => {
+    if (isMobileDevice()) {
+      setisMobile(true)
+    }
+  }
 
   const handleTab = e => {
     e.preventDefault()
     const currentIndex = parseFloat(e.target.dataset.index)
     setIndex(currentIndex)
   }
-
-  const shareFb = e => {
-    e.preventDefault()
-    nativeShareIt(metaTitle || title, metaDescription, `${url}${pathname}`)
-  }
-  console.log(props.data)
-  console.log(pathname)
 
   return (
     <>
@@ -196,7 +200,7 @@ const Recipe = props => {
           </article>
         </Twocolumns>
       </Layout>
-      <Shareit sharer={shareFb} />
+      {isMobile ? <Shareit sharer={shareFb} /> : ""}
     </>
   )
 }
@@ -232,10 +236,7 @@ export const query = graphql`
 
     site {
       siteMetadata {
-        defaultTitle: title
-        defaultDescription: description
         url
-        defaultImage: image
       }
     }
   }

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import "../css/detail.scss"
 import Layout from "../comp/Layout"
@@ -9,12 +9,17 @@ import Shareit from "../comp/Shareit"
 import Breadcrumbs from "../comp/Breadcrumbs"
 import Seo from "../comp/Seo"
 import Products from "../comp/Products"
+import { nativeShareIt, isMobileDevice } from "../functions/func"
+import { useLocation } from "@reach/router"
 import moment from "moment"
 import "moment/locale/ar-ma"
 moment.locale("ar-ma")
 //import Articlelist from "../comp/posts/Articlelist"
 
 const Post = ({ data }) => {
+  const [isMobile, setisMobile] = useState(null)
+  const { pathname } = useLocation()
+
   const {
     wpgraphql: { postBy },
   } = data
@@ -33,6 +38,23 @@ const Post = ({ data }) => {
 
   const seo = {
     title: metaTitle || title,
+  }
+
+  const { url } = data.site.siteMetadata
+
+  useEffect(() => {
+    isMobileFun()
+  }, [])
+
+  const shareFb = e => {
+    e.preventDefault()
+    nativeShareIt(seo.title, metaDescription, `${url}${pathname}`)
+  }
+
+  const isMobileFun = () => {
+    if (isMobileDevice()) {
+      setisMobile(true)
+    }
   }
 
   /*const addIds = () => {
@@ -131,7 +153,7 @@ const Post = ({ data }) => {
           </article>
         </Twocolumns>
       </Layout>
-      <Shareit />
+      {isMobile ? <Shareit sharer={shareFb} /> : ""}
     </>
   )
 }
@@ -178,6 +200,12 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+
+    site {
+      siteMetadata {
+        url
       }
     }
   }
