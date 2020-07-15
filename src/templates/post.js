@@ -24,7 +24,7 @@ const Post = ({ data }) => {
     wpgraphql: { postBy },
   } = data
 
-  const { title, content, date } = postBy
+  const { title, content, date, excerpt } = postBy
   const {
     featuredImage: { sourceUrl, imgTitle },
   } = postBy
@@ -67,6 +67,8 @@ const Post = ({ data }) => {
   useEffect(() => {
     addIds()
   })*/
+
+  console.log(data)
 
   return (
     <>
@@ -126,6 +128,15 @@ const Post = ({ data }) => {
                   </li>
                 </ul>
               </nav> */}
+              {excerpt ? (
+                <div
+                  className="post-excerpt"
+                  dangerouslySetInnerHTML={{ __html: excerpt }}
+                />
+              ) : (
+                ""
+              )}
+
               <div
                 className="std std-blog"
                 dangerouslySetInnerHTML={{ __html: content }}
@@ -167,6 +178,7 @@ export const query = graphql`
         date
         title
         content
+        excerpt
         categories {
           edges {
             node {

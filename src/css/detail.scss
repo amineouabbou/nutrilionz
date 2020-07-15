@@ -118,6 +118,35 @@
     }
   }
 
+  .post-excerpt {
+    padding: 30px 0;
+    p {
+      &:first-child {
+        font-size: 20px;
+        line-height: 27px;
+        text-align: justify;
+        color: #000;
+        position: relative;
+        padding: 0;
+        margin: 0;
+
+        &:before {
+          background-image: url("../assets/images/icons/quote.svg");
+          background-repeat: no-repeat;
+          width: 60px;
+          height: 48px;
+          position: absolute;
+          top: -20px;
+          right: -5px;
+          display: block;
+          content: "";
+          transform: rotate(-180deg);
+          opacity: 0.1;
+        }
+      }
+    }
+  }
+
   .std {
     font-size: 16px;
     line-height: 28px;
@@ -216,19 +245,9 @@
       }
     }
 
-    &.std-blog {
-      p {
-        &:first-child {
-          font-size: 20px;
-          line-height: 27px;
-          text-align: justify;
-          color: #000;
-        }
-      }
-    }
-
     p {
       margin-bottom: 25px;
+      text-align: justify;
 
       a {
         display: inline-block;
