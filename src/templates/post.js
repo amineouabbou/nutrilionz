@@ -30,10 +30,10 @@ const Post = ({ data }) => {
   } = postBy
 
   const { categories } = postBy
-  const { metaTitle, metaDescription } = postBy.seoParams
+  const { title: metaTitle, metaDesc } = postBy.seo
 
   const {
-    postProducts: { products },
+    postProducts: { products, sommaireRepeater },
   } = postBy
 
   const seo = {
@@ -48,7 +48,7 @@ const Post = ({ data }) => {
 
   const shareFb = e => {
     e.preventDefault()
-    nativeShareIt(seo.title, metaDescription, `${url}${pathname}`)
+    nativeShareIt(seo.title, metaDesc, `${url}${pathname}`)
   }
 
   const isMobileFun = () => {
@@ -57,7 +57,7 @@ const Post = ({ data }) => {
     }
   }
 
-  /*const addIds = () => {
+  const addIds = () => {
     const h2 = document.querySelectorAll(".std h2")
     h2.forEach((item, index) => {
       item.setAttribute("id", `paragraph-${index}`)
@@ -66,7 +66,12 @@ const Post = ({ data }) => {
 
   useEffect(() => {
     addIds()
-  })*/
+  })
+
+  const categoryTitle = () => {
+    const catTtitle = categories.edges.map(({ node }) => node.name)
+    return catTtitle[0]
+  }
 
   console.log(data)
 
@@ -75,11 +80,11 @@ const Post = ({ data }) => {
       <Layout>
         <Seo
           title={seo.title}
-          description={metaDescription}
+          description={metaDesc}
           article="true"
           image={sourceUrl}
         ></Seo>
-        <Breadcrumbs title="تمارين" />
+        <Breadcrumbs title={categoryTitle()} />
         <Twocolumns>
           <article className="col-sm-8">
             <div className="blog-detail">
@@ -106,28 +111,18 @@ const Post = ({ data }) => {
                 <img src={sourceUrl} alt={imgTitle} />
               </div>
 
-              {/* <nav className="article-nav">
-                <ul>
-                  <li>
-                    <a href="#paragraph-0">ما هو الواي بروتين ؟</a>
-                  </li>
-                  <li>
-                    <a href="#paragraph-1">كيف يصنع الواي؟</a>
-                  </li>
-                  <li>
-                    <a href="http://www.google.com">فوائد الواي بروتين</a>
-                  </li>
-                  <li>
-                    <a href="http://www.google.com">أضرار الواي بروتين</a>
-                  </li>
-                  <li>
-                    <a href="http://www.google.com">طريقة الإستخدام</a>
-                  </li>
-                  <li>
-                    <a href="http://www.google.com">الأسئلة الشائعة</a>
-                  </li>
-                </ul>
-              </nav> */}
+              {sommaireRepeater ? (
+                <nav className="article-nav">
+                  <ul>
+                    {sommaireRepeater.map((item, index) => (
+                      <li key={index}>
+                        <a href={`#paragraph-${index}`}>{item.titre}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              ) : null}
+
               {excerpt ? (
                 <div
                   className="post-excerpt"
@@ -191,9 +186,9 @@ export const query = graphql`
           sourceUrl(size: BLOG_THUMB_DETAIL)
           imgTitle: title
         }
-        seoParams {
-          metaTitle
-          metaDescription
+        seo {
+          title
+          metaDesc
         }
 
         postProducts {
@@ -210,6 +205,10 @@ export const query = graphql`
               }
               title
             }
+          }
+
+          sommaireRepeater {
+            titre
           }
         }
       }
