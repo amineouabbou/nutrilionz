@@ -93,7 +93,7 @@ const Navbar = ({ menustats, handleOpen }) => {
           <div className={`${Styles.bottomBox} d-lg-none`}>
             <div className="support-header">
               <span>بحاجة للمساعدة ؟</span>{" "}
-              <a href="tel:0537 29 44 40">06-666-984</a>
+              <a href="tel:0663-197-552">0663-197-552</a>
             </div>
           </div>
         </div>

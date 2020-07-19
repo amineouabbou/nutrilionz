@@ -1,24 +1,48 @@
 @import "../css/variables.scss";
 
 .products-box {
-  background-color: #f4f4f4;
+  margin-top: 60px;
   margin: 0 -15px;
   padding-top: 10px;
+  border-top: 1px solid $border-gray;
   .title-box {
     padding: 20px 0;
+    text-align: center;
     h2 {
-      font-family: "FrutigerLTBold";
-      font-size: 25px;
-      line-height: 30px;
-      position: relative;
-      text-align: center;
+      margin: 0;
+      span.st {
+        font-family: "FrutigerLTBold";
+        font-size: 29px;
+        line-height: 30px;
+        position: relative;
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+
+        &:before {
+          background-color: $second-color;
+          display: block;
+          content: "";
+          height: 11px;
+          left: -20px;
+          top: 11px;
+          right: -20px;
+          margin: 0 auto;
+          position: absolute;
+        }
+
+        span {
+          position: relative;
+          z-index: 2;
+        }
+      }
     }
   }
   .products {
     background-color: #fff;
     overflow-x: scroll;
     direction: ltr;
-    padding-top: 20px;
     padding-bottom: 20px;
 
     .products-wrap {

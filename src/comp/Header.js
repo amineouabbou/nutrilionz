@@ -54,7 +54,7 @@ export default class Header extends React.Component {
                 <div className="col-sm-6">
                   <div className={Styles.supportHeader}>
                     بحاجة إلى مساعدة ؟{" "}
-                    <a href="tel:0537 29 44 40">0537 29 44 40</a>
+                    <a href="tel:0663-197-552">0663-197-552</a>
                   </div>
                 </div>
               </div>
