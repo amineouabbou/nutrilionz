@@ -167,9 +167,9 @@ const Post = ({ data }) => {
 export default Post
 
 export const query = graphql`
-  query getPost($id: Int) {
+  query getPost($slug: String) {
     wpgraphql {
-      postBy(postId: $id) {
+      postBy(slug: $slug) {
         date
         title
         content

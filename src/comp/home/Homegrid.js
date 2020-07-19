@@ -13,6 +13,7 @@ const Homegrid = () => {
             node {
               date
               id: databaseId
+              slug
               title
               featuredImage {
                 sourceUrl(size: POST_THUMB_LIST)

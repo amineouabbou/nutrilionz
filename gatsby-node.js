@@ -7,6 +7,7 @@ exports.createPages = async ({ graphql, actions }) => {
         posts {
           nodes {
             id: databaseId
+            slug
           }
         }
 
@@ -49,10 +50,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.wpgraphql.posts.nodes.forEach(item => {
     createPage({
-      path: `post/${item.id}`,
+      path: `post/${item.slug}`,
       component: path.resolve(`./src/templates/post.js`),
       context: {
-        id: item.id,
+        slug: item.slug,
       },
     })
   })

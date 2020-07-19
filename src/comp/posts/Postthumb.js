@@ -9,7 +9,7 @@ moment.locale("ar-ma")
 
 const Postthumb = ({ data }) => {
   const {
-    id,
+    slug,
     title,
     date,
     featuredImage: { sourceUrl },
@@ -33,7 +33,7 @@ const Postthumb = ({ data }) => {
           </div>
         </div>
         <h3>
-          <Link to={`/post/${id}/`}>{title}</Link>
+          <Link to={`/post/${slug}/`}>{title}</Link>
         </h3>
 
         <div className={`${Styles.readMore} read-more`}>

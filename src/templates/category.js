@@ -26,7 +26,7 @@ const category = ({ data }) => {
               if (modulos === 0) {
                 return (
                   <Postcover
-                    urlpath={`/post/${node.id}`}
+                    urlpath={`/post/${node.slug}`}
                     category={category.name}
                     key={node.id}
                     data={node}
@@ -35,7 +35,7 @@ const category = ({ data }) => {
               }
               return (
                 <Articlelist
-                  urlpath={`/post/${node.id}`}
+                  urlpath={`/post/${node.slug}`}
                   category={category.name}
                   key={node.id}
                   data={node}
@@ -63,6 +63,7 @@ export const query = graphql`
               date
               excerpt
               id: databaseId
+              slug
               featuredImage {
                 mediaDetails {
                   sizes {
