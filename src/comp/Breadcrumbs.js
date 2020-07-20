@@ -23,7 +23,7 @@ const Breadcrumbs = ({ title }) => {
           </ul>
         </div>
         <div className={Styles.subTitle}>
-          <h1>{title}</h1>
+          <div className={Styles.title}>{title}</div>
         </div>
       </div>
     </div>
