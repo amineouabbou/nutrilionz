@@ -40,7 +40,7 @@ const Post = ({ data }) => {
     title: metaTitle || title,
   }
 
-  const { url } = data.site.siteMetadata
+  const { siteUrl } = data.site.siteMetadata
 
   useEffect(() => {
     isMobileFun()
@@ -48,7 +48,7 @@ const Post = ({ data }) => {
 
   const shareFb = e => {
     e.preventDefault()
-    nativeShareIt(seo.title, metaDesc, `${url}${pathname}`)
+    nativeShareIt(seo.title, metaDesc, `${siteUrl}${pathname}`)
   }
 
   const isMobileFun = () => {
@@ -72,8 +72,6 @@ const Post = ({ data }) => {
     const catTtitle = categories.edges.map(({ node }) => node.name)
     return catTtitle[0]
   }
-
-  console.log(data)
 
   return (
     <>
@@ -216,7 +214,7 @@ export const query = graphql`
 
     site {
       siteMetadata {
-        url
+        siteUrl
       }
     }
   }

@@ -12,7 +12,7 @@ const Seo = ({ title, description, image, article }) => {
         siteMetadata {
           defaultTitle: title
           defaultDescription: description
-          url
+          siteUrl
           defaultImage: image
         }
       }
@@ -22,7 +22,7 @@ const Seo = ({ title, description, image, article }) => {
   const {
     defaultTitle,
     defaultDescription,
-    url,
+    siteUrl,
     defaultImage,
   } = data.site.siteMetadata
 
@@ -30,7 +30,7 @@ const Seo = ({ title, description, image, article }) => {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: image || defaultImage,
-    url: `${url}${pathname}`,
+    url: `${siteUrl}${pathname}`,
   }
 
   return (

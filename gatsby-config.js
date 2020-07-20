@@ -9,13 +9,22 @@ module.exports = {
     title: "مدونة نترلاينز لكمال الأجسام المغرب",
     description:
       "مدونة نترلاينز، موقع مغربي عربي مخصص لرياضة كمال الأجسام، يهتم بكل ما يخص التغذية و التمارين وغيرها من المواضيع المفيدة",
-    url: "https://www.nutrilionz.com", // No trailing slash allowed!
+    siteUrl: "https://www.nutrilionz.com", // No trailing slash allowed!
     image: "/images/snap.jpg", // Path to your image you placed in the 'static' folder
   },
   /* Your site config here */
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.nutrilionz.com",
+        sitemap: "https://www.nutrilionz.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {

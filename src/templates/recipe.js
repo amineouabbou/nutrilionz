@@ -46,7 +46,7 @@ const Recipe = props => {
     title: metaTitle || title,
   }
 
-  const { url } = props.data.site.siteMetadata
+  const { siteUrl } = props.data.site.siteMetadata
 
   useEffect(() => {
     isMobileFun()
@@ -54,7 +54,7 @@ const Recipe = props => {
 
   const shareFb = e => {
     e.preventDefault()
-    nativeShareIt(seo.title, metaDescription, `${url}${pathname}`)
+    nativeShareIt(seo.title, metaDescription, `${siteUrl}${pathname}`)
   }
 
   const isMobileFun = () => {
@@ -236,7 +236,7 @@ export const query = graphql`
 
     site {
       siteMetadata {
-        url
+        siteUrl
       }
     }
   }
