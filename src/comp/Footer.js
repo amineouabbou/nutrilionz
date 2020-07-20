@@ -3,6 +3,7 @@ import Styles from "../css/footer.module.scss"
 import logoLionHead from "../assets/images/logo-mobile.svg"
 import { FaFacebookF, FaInstagram } from "react-icons/fa"
 import Notification from "../comp/Notification"
+import { Link, StaticQuery, graphql } from "gatsby"
 
 export default class Footer extends React.Component {
   state = {
@@ -173,29 +174,33 @@ export default class Footer extends React.Component {
                     <div className="row">
                       <div className="col-6 col-sm-4 col-lg-5 placeholder">
                         <div className={Styles.ulBox}>
-                          <h4>تغذية</h4>
-                          <ul>
-                            <li>
-                              <a rel="noreferrer" href="http://www.google.com">
-                                مكملات
-                              </a>
-                            </li>
-                            <li>
-                              <a rel="noreferrer" href="http://www.google.com">
-                                تمارين
-                              </a>
-                            </li>
-                            <li>
-                              <a rel="noreferrer" href="http://www.google.com">
-                                بناء العضلات
-                              </a>
-                            </li>
-                            <li>
-                              <a rel="noreferrer" href="http://www.google.com">
-                                نصائح عامة
-                              </a>
-                            </li>
-                          </ul>
+                          <h4>الأقسام</h4>
+                          <StaticQuery
+                            query={graphql`
+                              query getCategoriesMenuFooter {
+                                wpgraphql {
+                                  categories(where: { exclude: "1" }) {
+                                    nodes {
+                                      id
+                                      name
+                                      slug
+                                    }
+                                  }
+                                }
+                              }
+                            `}
+                            render={data => (
+                              <ul>
+                                {data.wpgraphql.categories.nodes.map(item => (
+                                  <li key={item.id}>
+                                    <Link to={`/category/${item.slug}`}>
+                                      <span>{item.name}</span>
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          />
                         </div>
                       </div>
 

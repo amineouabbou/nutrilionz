@@ -10,13 +10,14 @@ import { graphql } from "gatsby"
 
 const category = ({ data }) => {
   const { category } = data.wpgraphql
-  const { metaTitle, metaDescription } = category.seoParams
+  const { title, metaDesc } = category.seo
   const seo = {
-    title: metaTitle || category.name,
+    title: title || category.name,
   }
+
   return (
     <Layout>
-      <Seo title={seo.title} description={metaDescription}></Seo>
+      <Seo title={seo.title} description={metaDesc}></Seo>
       <Breadcrumbs title={category.name} />
       <Twocolumns>
         <div className="col-sm-8">
@@ -76,9 +77,9 @@ export const query = graphql`
             }
           }
         }
-        seoParams {
-          metaTitle
-          metaDescription
+        seo {
+          title
+          metaDesc
         }
       }
     }
