@@ -4,7 +4,7 @@ import "../css/detail.scss"
 import Layout from "../comp/Layout"
 import Twocolumns from "../comp/layout/Twocolumns"
 import { FaRegClock } from "react-icons/fa"
-import Fbsharedesk from "../comp/Fbsharedesk"
+//import Fbsharedesk from "../comp/Fbsharedesk"
 import Shareit from "../comp/Shareit"
 import Breadcrumbs from "../comp/Breadcrumbs"
 import Articlelist from "../comp/posts/Articlelist"
@@ -72,6 +72,8 @@ const Post = ({ data }) => {
     const catTtitle = categories.edges.map(({ node }) => node.name)
     return catTtitle[0]
   }
+
+  console.log(data)
 
   return (
     <>
@@ -143,17 +145,27 @@ const Post = ({ data }) => {
                 <strong>بروتينات</strong>
                 <strong>معلومات</strong>
               </div>
-
-              <Fbsharedesk />
             </div>
-            <div className="similar-post">
-              <div className="row">
-                <div className="col-sm-10">
-                  <h2>مقالات مشابهة</h2>
-                  <Articlelist />
+
+            {data.wpgraphql.postBy.postProducts.similarArticles ? (
+              <div className="similar-post">
+                <div className="row">
+                  <div className="col-sm-10">
+                    <h2>مقالات مشابهة</h2>
+                    {postBy.postProducts.similarArticles.map(node => (
+                      <Articlelist
+                        urlpath={`/post/${node.slug}`}
+                        category={node.categories.nodes[0].name}
+                        key={node.id}
+                        data={node}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              ""
+            )}
           </article>
         </Twocolumns>
       </Layout>
@@ -202,6 +214,29 @@ export const query = graphql`
                 }
               }
               title
+            }
+          }
+
+          similarArticles {
+            ... on WPGraphQL_Post {
+              id: databaseId
+              title
+              date
+              slug
+              categories {
+                nodes {
+                  name
+                }
+              }
+              featuredImage {
+                mediaDetails {
+                  sizes {
+                    name
+                    sourceUrl
+                  }
+                }
+                imgTtitle: title
+              }
             }
           }
 
