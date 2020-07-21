@@ -7,6 +7,7 @@ import { FaRegClock } from "react-icons/fa"
 import Fbsharedesk from "../comp/Fbsharedesk"
 import Shareit from "../comp/Shareit"
 import Breadcrumbs from "../comp/Breadcrumbs"
+import Articlelist from "../comp/posts/Articlelist"
 import Seo from "../comp/Seo"
 import Products from "../comp/Products"
 import { nativeShareIt, isMobileDevice } from "../functions/func"
@@ -14,7 +15,6 @@ import { useLocation } from "@reach/router"
 import moment from "moment"
 import "moment/locale/ar-ma"
 moment.locale("ar-ma")
-//import Articlelist from "../comp/posts/Articlelist"
 
 const Post = ({ data }) => {
   const [isMobile, setisMobile] = useState(null)
@@ -146,11 +146,11 @@ const Post = ({ data }) => {
 
               <Fbsharedesk />
             </div>
-            <div className="similar-post d-none">
+            <div className="similar-post">
               <div className="row">
                 <div className="col-sm-10">
                   <h2>مقالات مشابهة</h2>
-                  <p>Article list comp here</p>
+                  <Articlelist />
                 </div>
               </div>
             </div>
