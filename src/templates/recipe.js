@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import Layout from "../comp/Layout"
 import Twocolumns from "../comp/layout/Twocolumns"
 import Shareit from "../comp/Shareit"
-import Fbsharedesk from "../comp/Fbsharedesk"
+//import Fbsharedesk from "../comp/Fbsharedesk"
 import Styles from "../css/recipe.module.scss"
 import Breadcrumbs from "../comp/Breadcrumbs"
 import plat from "../assets/images/icons/plat.svg"
@@ -195,7 +195,6 @@ const Recipe = props => {
                 <strong>بروتينات</strong>
                 <strong>معلومات</strong>
               </div>
-              <Fbsharedesk />
             </div>
           </article>
         </Twocolumns>
