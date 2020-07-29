@@ -43,6 +43,7 @@ const Seo = ({ title, description, image, article }) => {
         <meta property="og:description" content={seo.description} />
       )}
       {seo.image && <meta property="og:image" content={seo.image} />}
+      <meta property="fb:app_id" content="1980593532055369" />
     </Helmet>
   )
 }
