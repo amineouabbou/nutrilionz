@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.wpgraphql.categories.nodes.forEach(item => {
     createPage({
-      path: `category/${decodeURIComponent(item.slug)}`,
+      path: `category/${item.slug}`,
       component: path.resolve(`./src/templates/category.js`),
       context: {
         slug: item.slug,
@@ -50,7 +50,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.wpgraphql.posts.nodes.forEach(item => {
     createPage({
-      path: `post/${decodeURIComponent(item.slug)}`,
+      path: `post/${item.slug}`,
       component: path.resolve(`./src/templates/post.js`),
       context: {
         slug: item.slug,
