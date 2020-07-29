@@ -24,7 +24,7 @@ const Post = ({ data }) => {
     wpgraphql: { postBy },
   } = data
 
-  const { title, content, date, excerpt } = postBy
+  const { title, content, date } = postBy
   const {
     featuredImage: { sourceUrl, imgTitle },
   } = postBy
@@ -61,6 +61,11 @@ const Post = ({ data }) => {
     const h2 = document.querySelectorAll(".std h2")
     h2.forEach((item, index) => {
       item.setAttribute("id", `paragraph-${index}`)
+    })
+
+    const aLinks = document.querySelectorAll(".std a[aria-label]")
+    aLinks.forEach(item => {
+      item.setAttribute("class", `resources`)
     })
   }
 
@@ -120,15 +125,6 @@ const Post = ({ data }) => {
                   </ul>
                 </nav>
               ) : null}
-
-              {excerpt ? (
-                <div
-                  className="post-excerpt"
-                  dangerouslySetInnerHTML={{ __html: excerpt }}
-                />
-              ) : (
-                ""
-              )}
 
               <div
                 className="std std-blog"
