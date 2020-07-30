@@ -13,8 +13,10 @@ const Postcover = ({ data, urlpath, category }) => {
   const { imgTtitle } = data.featuredImage
   const { sizes } = data.featuredImage.mediaDetails
   const [Thumb] = sizes.filter(item => {
-    return item.name === "blog-thumb-big"
+    return item.name === "blog-thumb-detail"
   })
+
+  console.log(data)
 
   return (
     <div className={Styles.postCover}>
