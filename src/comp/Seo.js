@@ -35,7 +35,9 @@ const Seo = ({ title, description, image, article }) => {
 
   return (
     <Helmet title={seo.title}>
+      <html lang="ar" />
       <meta name="description" content={seo.description} />
+      {seo.url && <link rel="canonical" href={seo.url} />}
       {seo.url && <meta property="og:url" content={seo.url} />}
       {(article ? true : null) && <meta property="og:type" content="article" />}
       {seo.title && <meta property="og:title" content={seo.title} />}
@@ -44,6 +46,13 @@ const Seo = ({ title, description, image, article }) => {
       )}
       {seo.image && <meta property="og:image" content={seo.image} />}
       <meta property="fb:app_id" content="1980593532055369" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@nutrilionz" />
+      {seo.title && <meta name="twitter:title" content={seo.title} />}
+      {seo.description && (
+        <meta name="twitter:description" content={seo.description} />
+      )}
+      {seo.image && <meta name="twitter:image" content={seo.image} />}
     </Helmet>
   )
 }
