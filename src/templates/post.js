@@ -78,8 +78,6 @@ const Post = ({ data }) => {
     return catTtitle[0]
   }
 
-  console.log(data)
-
   return (
     <>
       <Layout>

@@ -16,8 +16,6 @@ const Postcover = ({ data, urlpath, category }) => {
     return item.name === "blog-thumb-big"
   })
 
-  console.log(data)
-
   return (
     <div className={Styles.postCover}>
       <div className={Styles.thumb}>
