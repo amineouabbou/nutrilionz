@@ -8,7 +8,7 @@ const Homegrid = () => {
   const query = graphql`
     query getHomePosts {
       wpgraphql {
-        posts {
+        posts(first: 100) {
           edges {
             node {
               date
