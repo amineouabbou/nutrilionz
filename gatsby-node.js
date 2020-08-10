@@ -4,7 +4,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(`
     query MyQuery {
       wpgraphql {
-        posts {
+        posts(first: 100) {
           nodes {
             id: databaseId
             slug
